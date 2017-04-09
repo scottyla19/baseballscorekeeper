@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Baseball Score Keeper</string>
+    <string name="home_team">Home Team</string>
+    <string name="away_team">Away Team</string>
+    <string name="run_scored">Run Scored</string>
+    <string name="hit">Hit</string>
+    <string name="error_committed">Error Committed</string>
+    <string name="outs">Record Out</string>
+</resources>

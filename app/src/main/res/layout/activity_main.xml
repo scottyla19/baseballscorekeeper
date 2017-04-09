@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/home_team"
+                android:id="@+id/homeField"
+                android:gravity="center"/>
+            <TextView
+                style="@style/score_board"
+                android:id="@+id/home_score"
+                android:gravity="center" />
+
+            <Button
+                android:id="@+id/home_rs_btn"
+                style="@style/buttons"
+                android:visibility="gone"
+                android:onClick="incrementStats"
+                android:text="@string/run_scored" />
+
+            <Button
+                style="@style/buttons"
+                android:onClick="incrementStats"
+                android:visibility="gone"
+                android:id="@+id/home_hit_btn"
+                android:text="@string/hit"/>
+
+            <Button
+                android:id="@+id/home_error_btn"
+                style="@style/buttons"
+                android:onClick="incrementStats"
+                android:text="@string/error_committed" />
+            <Button
+                android:id="@+id/home_out_btn"
+                style="@style/buttons"
+                android:visibility="gone"
+                android:onClick="recordOut"
+                android:text="@string/outs" />
+        </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/away_team"
+                    android:id="@+id/awayField"
+                    android:gravity="center"/>
+                <TextView
+                    style="@style/score_board"
+                    android:id="@+id/away_score"
+                    android:gravity="center"
+                    />
+                <Button
+                    style="@style/buttons"
+                    android:onClick="incrementStats"
+                    android:id="@+id/away_rs_btn"
+                    android:text="@string/run_scored"/>
+                <Button
+                    style="@style/buttons"
+                    android:id="@+id/away_hit_btn"
+                    android:onClick="incrementStats"
+                    android:text="@string/hit"/>
+                <Button
+                    style="@style/buttons"
+                    android:id="@+id/away_error_btn"
+                    android:onClick="incrementStats"
+                    android:visibility="gone"
+                    android:text="@string/error_committed"/>
+                <Button
+                    android:id="@+id/away_out_btn"
+                    style="@style/buttons"
+                    android:onClick="recordOut"
+                    android:text="@string/outs"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="R" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="H" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="E" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/home_team"
+                    android:id="@+id/boxscore_home_team"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="0"
+                    android:id="@+id/boxscore_home_runs"/>
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="0"
+                    android:id="@+id/boxscore_home_hits"/>
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="0"
+                    android:id="@+id/boxscore_home_errors"/>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:id="@+id/boxscore_away_team"
+                    android:text="@string/away_team" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/boxscore_away_runs"
+                    android:text="0" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/boxscore_away_hits"
+                    android:text="0" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/boxscore_away_errors"
+                    android:text="0" />
+
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/inning_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_weight="1"
+                android:text="Top 1st" />
+
+            <TextView
+                android:id="@+id/outs_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/inning_label"
+                android:layout_marginLeft="16dp"
+                android:gravity="center"
+                android:text="Outs" />
+
+            <RadioButton
+                android:id="@+id/one_out"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/inning_label"
+                android:layout_marginLeft="16dp"
+                android:layout_toRightOf="@id/outs_label"
+                android:enabled="false" />
+
+            <RadioButton
+                android:id="@+id/two_out"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/inning_label"
+                android:layout_toRightOf="@id/one_out"
+                android:enabled="false" />
+
+            <!--<RadioButton-->
+                <!--android:id="@+id/three_out"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@id/inning_label"-->
+                <!--android:layout_toRightOf="@id/two_out"-->
+                <!--android:enabled="false" />-->
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>
+
+
